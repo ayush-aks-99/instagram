@@ -45,12 +45,12 @@ const postToInsta = async (day) => {
         */
     });
 
-    process.env.DAY = process.env.DAY +1;
+    process.env.DAY = Number(process.env.DAY) +1;
 
 }
 
-/*const cronInsta = new CronJob("30 * * * * *", async () => {
-    postToInsta();
-});*/
-postToInsta(process.env.DAY);
-//cronInsta.start();
+const cronInsta = new CronJob("*/2 * * * *", async () => {
+    postToInsta(process.env.DAY);
+});
+//postToInsta(process.env.DAY);
+cronInsta.start();
