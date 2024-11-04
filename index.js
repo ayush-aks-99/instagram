@@ -49,7 +49,7 @@ const postToInsta = async (day) => {
 
 }
 
-const cronInsta = new CronJob("*/2 * * * *", async () => {
+const cronInsta = new CronJob("*/10 * * * *", async () => {
     postToInsta(process.env.DAY);
 });
 //postToInsta(process.env.DAY);
